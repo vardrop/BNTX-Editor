@@ -16,7 +16,6 @@ from PIL import Image
 parser = argparse.ArgumentParser(description='CLI for BNTX Editor', formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 parser.add_argument('-i', '--input', help='input .bntx', type=argparse.FileType('r'), nargs='+', default=['*.bntx'])
 parser.add_argument('-o', '--outdir', help='output folder', default='out')
-parser.add_argument('-c', '--convert', help='convert .dds to .png', action='store_true')
 
 args = parser.parse_args()
 files = []
@@ -32,9 +31,4 @@ for fn in args.input:
     x.readFromFile(fn)
     x.extract(0, os.path.dirname(os.path.abspath(fn)), 0)
     for fn in glob.glob('*.dds'):
-        if args.convert:
-            im = Image.open(fn)
-            fn = os.path.splitext(fn)[0] + '.png'
-            im.save(fn, "PNG")
-            os.remove(os.path.splitext(fn)[0] + '.dds')
         os.rename(fn, 'out/' + fn)
