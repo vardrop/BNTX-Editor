@@ -107,3 +107,5 @@ ENV/
 *.bntx
 build.bat
 log.txt
+
+out
