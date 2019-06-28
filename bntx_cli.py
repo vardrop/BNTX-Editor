@@ -13,7 +13,7 @@ import globals
 
 from PIL import Image
 
-parser = argparse.ArgumentParser(description='CLI for BNTX Editor')
+parser = argparse.ArgumentParser(description='CLI for BNTX Editor', formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 parser.add_argument('-i', '--input', help='input .bntx', type=argparse.FileType('r'), nargs='+', default=['*.bntx'])
 parser.add_argument('-o', '--outdir', help='output folder', default='out')
 parser.add_argument('-c', '--convert', help='convert .dds to .png', action='store_true')
