@@ -15,6 +15,23 @@ $ pip3 install --user -r requirements.txt
 $ python3 bntx_editor.py
 ```
 
+## CLI (supports batch conversion)
+
+```
+$ python3 bntx_cli.py -h
+usage: bntx_cli.py [-h] [-i INPUT [INPUT ...]] [-o OUTDIR] [-c]
+
+CLI for BNTX Editor
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -i INPUT [INPUT ...], --input INPUT [INPUT ...]
+                        input .bntx
+  -o OUTDIR, --outdir OUTDIR
+                        output folder
+  -c, --convert         convert .dds to .png
+```
+
 ## Error codes:
 * 1: Invalid byte order mark (BOM)
 * 2: Invalid file header
